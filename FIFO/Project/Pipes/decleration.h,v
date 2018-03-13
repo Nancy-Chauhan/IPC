@@ -1,0 +1,54 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.20.17.47.12;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.30.01;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@In this function. I have declearation of all function .
+@
+
+
+1.2
+log
+@I define the handle for singal.
+@
+text
+@
+static int alarm_sig=0;
+int *init();
+
+
+
+//Function to poniter decleration
+int *(*ini)();
+
+
+
+// signal declearation.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d2 1
+a2 1
+
+d9 4
+@

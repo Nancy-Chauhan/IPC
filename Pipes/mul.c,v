@@ -1,0 +1,42 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2017.09.17.16.34.20;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is the procrssing client. 
+Which is used to multiple the data
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include"header.h"
+#include"decleration.h"
+#include"request.h"
+int main(int argc,char *argv[])
+{
+	int wfd,count,add,a,b,c;
+	Request r;
+	printf("%d: %s is begin\n",getpid(),__FILE__);	
+	b=atoi(argv[3]);
+	c=atoi(argv[4]);
+	wfd=atoi(argv[1]);
+	add=b*c;
+	count=write(wfd,&add,sizeof(int));
+	printf("write-->=%d\n",count);
+	printf("%d: %s is end\n",getpid(),__FILE__);	
+}
+@

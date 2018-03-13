@@ -1,0 +1,31 @@
+#! /bin/bash
+for file in $( server.c init.c ) $(ls *.h)
+do
+	ci $file
+done
+for file in $( server.c,v init.c,v ) $(ls *.h,v)
+do
+	co $file
+done
+if ( make )
+then 
+	read -n1 -p "Do you want to run your app(y/n)?" resp
+	read
+	if [ $resp == 'y' ]
+	then
+		./server1
+	fi
+	if [ $resp == 'n' ]
+	then
+		echo "compilation failed."
+	fi
+fi
+read -n1 -p "Do you want further edit(y/n)?" res
+read
+if [ $res == 'y' ]
+then
+	for file in $( server.c,v init.c,v ) $(ls *.h,v)
+	do
+		co -l $file
+	done
+fi

@@ -1,0 +1,150 @@
+head	1.5;
+access;
+symbols;
+locks
+	root:1.5; strict;
+comment	@ * @;
+
+
+1.5
+date	2017.09.22.05.37.53;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2017.09.22.05.35.15;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2017.09.22.05.32.32;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2017.09.22.05.29.19;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.22.05.12.50;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@In this function. I have make all FIFO
+@
+
+
+1.5
+log
+@I had changed the begin promt
+@
+text
+@#include"header.h"
+#include"ds.h"
+#include"decleration.h"
+int initialisation()
+{
+	int a;
+	printf("%s: is begin\n",__func__);
+	if(access("fifo1",F_OK)==-1)
+	{
+		a=mkfifo("fifo1",0666);
+		if(a==-1)
+		{
+			fprintf(stderr,"fifo is not make\n",mkfifo);
+			exit(EXIT_FAILURE);
+		}
+	}
+	if(access("fifo2",F_OK)==-1)
+	{
+		a=mkfifo("fifo2",0666);
+		if(a==-1)
+		{
+			fprintf(stderr,"fifo is not make\n",mkfifo);
+			exit(EXIT_FAILURE);
+		}
+	}
+	if(access("fifo3",F_OK)==-1)
+	{
+		a=mkfifo("fifo3",0666);
+		if(a==-1)
+		{
+			fprintf(stderr,"fifo is not make\n",mkfifo);
+			exit(EXIT_FAILURE);
+		}
+	}
+	if(access("fifo4",F_OK)==-1)
+	{
+		a=mkfifo("fifo4",0666);
+		if(a==-1)
+		{
+			fprintf(stderr,"fifo is not make\n",mkfifo);
+			exit(EXIT_FAILURE);
+		}
+	}
+	printf("%s: is end\n",__func__);
+}
+// req fifo
+@
+
+
+1.4
+log
+@give the \n
+@
+text
+@d7 1
+a7 1
+	printf("Pid :%d server is begin\n",getpid());
+d44 1
+a44 1
+	printf("Pid :%d server is end\n",getpid());
+@
+
+
+1.3
+log
+@there is a mistake in spelling
+@
+text
+@d7 1
+a7 1
+	printf("Pid :%d server is begin",getpid());
+d44 1
+a44 1
+	printf("Pid :%d server is end",getpid());
+@
+
+
+1.2
+log
+@there is a mistake in access command
+@
+text
+@d4 1
+a4 1
+int initalisation()
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 1
+a8 1
+	if(access(fifo1,F_OK)==-1)
+d17 1
+a17 1
+	if(access(fifo2,F_OK)==-1)
+d26 1
+a26 1
+	if(access(fifo3,F_OK)==-1)
+d35 1
+a35 1
+	if(access(fifo4,F_OK)==-1)
+@

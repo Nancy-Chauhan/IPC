@@ -1,0 +1,37 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2017.09.22.05.13.36;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is my structure file
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@typedef struct request
+{
+	int pid;
+	int oper1;
+	int oper2;
+	char opr;
+}Request;
+typedef struct result
+{
+	int pid;
+	int result;
+}Result;
+@

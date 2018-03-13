@@ -1,0 +1,69 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.19.04.00.09;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.32.34;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@ths is also not the app file
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc,char* argv[])
+{
+	int fd,ret,i,byte;
+	char rbuff[50];
+	printf("%s:is begin\n",__FILE__);
+	fd=atoi(argv[1]);
+	while(1)
+	{
+		ret=read(fd,rbuff,50);
+		printf("%d: byte read=%d\n",getpid(),ret);
+	}
+	printf("fd=%d\n",fd);
+	printf("%s:is end\n",__FILE__);
+}
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d6 2
+a7 2
+	int fd,ret=0,i,byte;
+	char rbuff[1000];
+a9 1
+	byte=i=1024;
+d12 2
+a13 5
+		ret=read(fd,rbuff,1000);
+		rbuff[ret]='\0';
+		byte +=1000;
+		printf("%d: byte=%d\n",getpid(),byte);
+		sleep(1);
+@

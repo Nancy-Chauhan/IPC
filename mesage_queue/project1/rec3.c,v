@@ -1,0 +1,41 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2017.09.22.06.22.40;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is my third client server
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include"header.h"
+#include"ds.h"
+#include"decleration.h"
+int main()
+{
+	int a,wfd;
+	Request r;
+	printf("%s: is begin\n",getpid());
+	r.opr='*';
+	r.oper1=33;
+	r.oper2=12;
+	wfd=open("fifo1",O_WRONLY);
+	write(wfd,&r,sizeof(Request));
+	printf("%s: is end\n",getpid());
+	return 0;
+}
+@

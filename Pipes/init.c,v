@@ -1,0 +1,40 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2017.09.17.16.33.35;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is the function for initialise the pipes
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include"header.h"
+#include"decleration.h"
+int *init()
+{
+	int *pipes,i;
+
+	printf("%s: is begin\n",__func__);
+	pipes=(int*)malloc(sizeof(int)*6);
+	for(i=0;i<3;i++)
+	{
+		pipe(pipes+i*2);
+	}
+	printf("%s: is end\n",__func__);
+	return pipes;
+}
+@

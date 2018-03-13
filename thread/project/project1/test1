@@ -1,0 +1,32 @@
+#! /bin/bash
+
+for file in $( rec1.c rec2.c rec3.c) $(ls *.h)
+do
+	ci $file
+done
+for file in $(rec1.c,v rec2.c,v rec3.c,v) $(ls *.h,v)
+do
+	co $file
+done
+if ( make )
+then
+	read -n1 -p "Compilation successfully.Do you want to run your (y/n)?" resp
+	if [ $resp == 'y' ]
+	then
+		./rec1 & 
+		./rec2 &
+		./rec3 
+	fi
+else
+	echo "Compilation fail"
+fi
+read -n1 -p "DO you wanr to further edit(y/n)?" res
+if [ $res == 'y' ]
+then
+	for file in $(rec1.c,v rec2.c,v rec3.c,v) $(ls *.h,v)
+	do
+		co -l $file
+	done
+fi
+
+		

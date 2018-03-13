@@ -1,0 +1,95 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.19.03.59.59;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.32.15;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is not the app file
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<unistd.h>
+int main()
+{
+	int ret,arr[3],fret,len,i=0,byte;
+	char buff[]={"hello,how r u ???"};
+	char sfd[4];
+	char wbuff[4096];
+	printf("%s: is begin\n",__FILE__);
+	pipe(arr);
+	printf("ar[0]=%d\n",arr[0]);
+	printf("ar[1]=%d\n",arr[1]);
+	len=strlen(buff);
+	write(arr[1],wbuff,len);
+	i=1024;
+	fret=fork();
+	switch(fret)
+	{
+		case -1:
+			printf("error in fork call\n");
+			break;
+		case 0:
+			printf("pid :%d child pid %d\n",getpid(),getppid());
+			sprintf(sfd,"%d",arr[0]);
+			execl("./2","2",sfd,NULL);
+			break;
+		default:
+			printf("pid :%d parents pid %d\n",getpid(),getppid());
+	}
+//	while(1)
+//	{
+		len=write(arr[1],wbuff,100);
+		printf("%d: byte write=%d\n",getpid(),len);
+		//close(arr[1]);
+		//sleep(10);
+//		break;
+//	}
+	printf("%s: is end\n",__FILE__);
+}
+	
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@a4 1
+#define SIZE=1024*1000*5;
+d7 1
+a7 1
+	int ret,arr[3],fret,len,i,byte;
+d32 8
+a39 8
+	byte='\0';
+	while(1)
+	{
+		len=write(arr[1],wbuff,i);
+		byte =byte+i;
+		sleep(1);
+		printf("%d: byte=%d\n",getpid(),byte);
+	}
+@

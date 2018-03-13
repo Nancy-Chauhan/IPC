@@ -1,0 +1,47 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.20.17.48.00;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.31.14;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@In this function. I have all header files
+@
+
+
+1.2
+log
+@Add a new header file signal.h for signal command
+@
+text
+@#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<signal.h>
+#include<unistd.h>
+#include<fcntl.h>
+#include<sys/types.h>
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d4 1
+d7 1
+@

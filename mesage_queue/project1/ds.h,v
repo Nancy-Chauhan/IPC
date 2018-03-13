@@ -1,0 +1,80 @@
+head	1.3;
+access;
+symbols;
+locks
+	root:1.3; strict;
+comment	@ * @;
+
+
+1.3
+date	2017.10.04.13.31.46;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2017.09.28.16.00.40;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.22.05.13.36;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is my structure file
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@typedef struct request
+{
+	int pid;
+	int oper1;
+	int oper2;
+	char opr;
+}Request;
+typedef struct result
+{
+	int pid;
+	int result;
+}Result;
+static int alarm_sig=0;
+void def(int sig)
+{
+	alarm_sig=1;
+	printf("def is called\n");
+}
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d13 2
+a14 1
+union semun
+d16 3
+a18 5
+	int val;
+	struct semid_ds *buf;
+	unsigned short *array;
+};
+extern int key;
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d13 7
+@

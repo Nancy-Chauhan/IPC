@@ -1,0 +1,329 @@
+head	1.7;
+access;
+symbols;
+locks
+	root:1.7; strict;
+comment	@ * @;
+
+
+1.7
+date	2017.09.23.07.41.51;	author root;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2017.09.23.05.15.36;	author root;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2017.09.22.17.41.37;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2017.09.20.17.51.12;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2017.09.19.04.02.38;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2017.09.17.20.07.01;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.35.55;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is my server file
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@#include"header.h"
+#include"decleration.h"
+#include"request.h"
+#define FIFO "fifo%d"
+int main()
+{
+	int  *pipes,wfd,rfd,rfd1,wfd1,rfd2,wfd2,i,j;
+	int  fret,count;
+	int  a,b,c,d,e;
+	char buff1[100],buff2[100],buff3[100];
+	char rres[4],wres[4],q[4],s[4],t[4],wrres[4],u[4],v[4],z[4];
+	char *argv[6],frqt,*argv1[5],*argv2[7];
+	Request req[3];
+	Request exe[4];
+	printf("%d:- is begin\n",getpid());
+	pipes=init();
+	rfd =*(pipes+0);
+	wfd =*(pipes+1);
+	rfd1=*(pipes+2);	
+	wfd1=*(pipes+3);	
+	rfd2=*(pipes+4);	
+	wfd2=*(pipes+5);
+	mkfifo("myfile",0666);
+	a=open("myfile",O_RDONLY);
+	for(i=0;i<3;i++)
+	{
+		read(a,&req[i],sizeof(Request));
+		printf("read pid--->%d\n",req[i].pid);
+		printf("read pid--->%d\n",req[i].opr1);
+		printf("read pid--->%c\n",req[i].opt);
+		printf("read pid--->%d\n",req[i].opr2);
+	}	
+	close(a);
+	for(j=0;j<3;j++)
+	{
+		frqt=fork();
+		switch(frqt)
+		{
+			case -1:
+				printf("Error in fork\n");
+				exit(EXIT_FAILURE);
+			case 0:
+				sprintf(wrres,"%d",wfd2);
+				sprintf(s,"%d",req[j].opr1);
+				sprintf(q,"%d",req[j].opt);
+				sprintf(t,"%d",req[j].opr2);
+				sprintf(v,"%d",req[j].pid);
+				argv2[1]=wrres;
+				argv2[2]=q;
+				argv2[3]=s;
+				argv2[4]=t;
+				argv2[5]=v;
+				argv2[6]=NULL;
+				if((req[j].opt) =='+')
+				{
+					argv2[0]="add";
+					execv("./add",argv2);
+					break;
+				}
+				if((req[j].opt) =='-')
+				{
+					argv2[0]="sub";
+					execv("./sub",argv2);
+					break;
+				}
+				if((req[j].opt) =='*')
+				{
+					argv2[0]="mul";
+					execv("./mul",argv2);
+					break;
+				}
+				break;
+			default:
+				count=read(rfd2,&exe[j],sizeof(Request));
+				printf("read--->%d\n",count);
+				break;
+		}
+	}
+	for(i=0;i<3;i++)
+	{
+		sleep(2);
+		sprintf(z,FIFO,exe[i].pid);
+		mkfifo(z,0666);
+		printf("fifo--->%s\n",z);
+		printf("read pid--->%d\n",exe[i].pid);
+		printf("read pid--->%d\n",exe[i].result);
+		wfd1=open(z,O_WRONLY);	
+		count=write(wfd1,&exe[i].result,sizeof(int));
+		printf("read pid--->%d\n",wfd1);
+		unlink(z);
+	}
+	printf("%d: is end\n",getpid());
+}
+@
+
+
+1.6
+log
+@we used fifo.
+@
+text
+@d28 4
+d83 2
+a84 1
+		mkfifo(z);
+d86 2
+a87 1
+		wfd1=open(z,O_RDONLY);	
+d89 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d11 1
+a11 1
+	char rres[4],wres[4],q[4],s[4],t[4],wrres[4],u[4],v[4];
+d25 4
+a28 7
+	read(a,&req[0],sizeof(Request));	
+	mkfifo("myfile",0666);
+	a=open("myfile",O_RDONLY);
+	read(a,&req[1],sizeof(Request));	
+	a=mkfifo("myfile",0666);
+	a=open("myfile",O_RDONLY);
+	read(a,&req[2],sizeof(Request));	
+d78 2
+a79 1
+		sprintf(FIFO,"fifo%d",exe[i].pid);
+d81 1
+a81 1
+		wfd1=open(FIFO,O_RDONLY);	
+d83 1
+@
+
+
+1.4
+log
+@add the kill function
+@
+text
+@d4 1
+d8 7
+a14 4
+	int  fret,count,exe[4];
+	char rres[4],wres[4],q[4],s[4],t[4],wrres[4],u[4];
+	char *argv[4],frqt,*argv1[5],*argv2[5],a;
+	Request req[4];
+d23 10
+a32 25
+	for(i=0;i<3;i++)
+	{
+		fret=fork();
+		switch(fret)
+		{
+			case -1:
+				printf("Error in fork\n");
+				exit(EXIT_FAILURE);
+			case 0:
+				sprintf(wres,"%d",wfd);
+				sprintf(rres,"%d",rfd1);
+				char *flnm[]={"rec1","rec2","rec3"};
+				char *ptnm[]={"./rec1","./rec2","./rec3"};
+				argv[0]=flnm[i];
+				argv[1]=wres;
+				argv[2]=rres;
+				argv[3]=NULL;
+				execv(ptnm[i],argv);
+				break;
+			default:
+				count=read(rfd,&req[i],sizeof(Request));
+				printf("read=%d\n",count);
+			printf("pid--->%d\n",req[i].pid);
+		}
+	}
+d46 1
+d51 2
+a52 1
+				argv2[5]=NULL;
+d73 1
+a73 1
+				count=read(rfd2,&exe[j],sizeof(int));
+a79 2
+		count=write(wfd1,&exe[i],sizeof(int));
+		printf("write--->%d\n",count);
+d81 4
+a84 2
+		kill(req[i].pid,SIGALRM);	
+		printf("pid--->%d\n",req[i].pid);
+@
+
+
+1.3
+log
+@Now we use four client server
+@
+text
+@d8 1
+a8 1
+	char rres[4],wres[4],q[4],s[4],t[4],wrres[4];
+d19 1
+a19 1
+	for(i=0;i<4;i++)
+d30 2
+a31 2
+				char *flnm[]={"rec1","rec2","rec3","rec4"};
+				char *ptnm[]={"./rec1","./rec2","./rec3","./rec4"};
+d41 1
+d44 1
+a44 1
+	for(j=0;j<4;j++)
+a79 6
+				if((req[j].opt) =='/')
+				{
+					argv2[0]="div";
+					execv("./div",argv2);
+					break;
+				}
+d87 1
+a87 1
+	for(i=0;i<4;i++)
+d91 3
+@
+
+
+1.2
+log
+@remove the operator. which is send as a argument in the processing client
+@
+text
+@d7 1
+a7 1
+	int  fret,count,exe[3];
+d10 1
+a10 2
+	Request req[3];
+	//char *res[]={"add","sub","mul"};
+d19 1
+a19 1
+	for(i=0;i<3;i++)
+d30 2
+a31 2
+				char *flnm[3]={"rec1","rec2","rec3"};
+				char *ptnm[3]={"./rec1","./rec2","./rec3"};
+d43 1
+a43 1
+	for(j=0;j<3;j++)
+d54 1
+a54 1
+				//sprintf(q,"%d",req[j].opt);
+d57 1
+a57 1
+				//argv2[2]=q;
+d79 6
+d92 1
+a92 1
+	for(i=0;i<3;i++)
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d55 1
+a55 1
+				sprintf(q,"%d",req[j].opt);
+d58 1
+a58 1
+				argv2[2]=q;
+@

@@ -1,0 +1,110 @@
+head	1.4;
+access;
+symbols;
+locks
+	root:1.4; strict;
+comment	@ * @;
+
+
+1.4
+date	2017.09.21.04.20.00;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2017.09.20.17.50.11;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2017.09.19.04.00.46;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.35.18;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is second requesting client
+@
+
+
+1.4
+log
+@Now we use sigaction in place of signal
+@
+text
+@#include"header.h"
+#include"decleration.h"
+#include"request.h"
+int main(int argc,char *argv[])
+{
+	int wfd,count=0,rfd1,add;
+	char q[8];
+	Request r;
+	struct sigaction p;
+        p.sa_handler=def;
+        sigemptyset(&p.sa_mask);
+        p.sa_flags=0;
+
+	printf("%d: %s is begin\n",getpid(),__FILE__);	
+	wfd=atoi(argv[1]);
+	printf("Enter the first values\n");
+	scanf("%d",&r.opr1);
+	printf("Enter any one operation('+','-','*','/')\n");
+	scanf(" %c",&r.opt);
+	printf("Enter the second values\n");
+	scanf("%d",&r.opr2);
+	r.pid=getpid();
+	count=write(wfd,&r,sizeof(Request));
+	printf("write=%d\n",count);
+	rfd1=atoi(argv[2]);
+	sigaction(SIGALRM,&p,0);
+	pause();
+	if(alarm_sig)
+	{
+		count=read(rfd1,&add,sizeof(int));
+		printf("Output rec2------------>>%d\n",add);
+	}	
+	printf("%d: %s is end\n",getpid(),__FILE__);	
+}
+@
+
+
+1.3
+log
+@add the signal alarm for the result executing to same client which give the command
+@
+text
+@d9 5
+d26 1
+a26 1
+	signal(SIGALRM,def);
+@
+
+
+1.2
+log
+@we change the output format
+@
+text
+@d17 1
+d21 7
+a27 2
+	count=read(rfd1,&add,sizeof(int));
+	printf("Output rec2------------>>%d\n",add);
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d21 1
+a21 1
+	printf("Output rec2--->>%d\n",add);
+@

@@ -1,0 +1,72 @@
+#! /bin/bash
+for file in $(ls *.h) $(ls *.c)
+do
+	ci $file
+done
+
+for file in $(ls *.h,v) $(ls *.c,v)
+do
+	co $file
+done
+checkout()
+{
+for file in $(ls *.h,v) $(ls *.c,v)
+do
+	co -l $file
+done
+}
+
+remove()
+{
+	rm *.o
+	rm server1
+}
+checkforrun()
+{
+	read -n1 -p "Do you want to edit(1) or run(2)?" response
+	read
+	if [ $response == 1 ]
+	then
+		co -l  $file
+	fi
+	if [ $response == 2 ]
+	then
+		make server1
+		./server1
+		remove
+	fi
+}
+cclient()
+{
+	read -n1 -p "do you want to compile the cliet and Process client(y/n)?" resp
+	read
+	if [ $resp == y ]
+	then
+		make rec1
+		make rec2
+		make rec3
+		make add
+		make sub
+		make mul
+		checkforrun
+	fi
+}
+
+if ( make )
+then
+	read -n1 -p "Compilation is successfilly.Do you want to run the app (y/n)?" resp
+	read
+	if [ $resp == y ]
+	then 
+		cclient
+	fi
+else
+	read "compilation fail"
+fi
+read -n1 -p "Do you want to further edit(y/n)?" resp
+read
+if [ $resp == y ]
+then
+	checkout
+fi
+

@@ -1,0 +1,5 @@
+int initialisation();
+
+
+
+int (*init)();

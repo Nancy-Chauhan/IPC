@@ -1,0 +1,50 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.20.17.48.35;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.31.39;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@In this function . I have strucher
+@
+
+
+1.2
+log
+@we give the definition for signal handler
+@
+text
+@typedef struct request
+{
+	int pid;
+	int opr1;
+	int opr2;
+	char opt;
+}Request;
+void def(int sig)
+{
+	alarm_sig=1;
+}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 4
+@

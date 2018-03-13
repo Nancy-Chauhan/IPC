@@ -1,0 +1,5 @@
+#! /bin/bash
+
+./rec1 &
+./rec2 &
+./rec3

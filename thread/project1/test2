@@ -1,0 +1,12 @@
+#! /bin/bash	
+while [ i ]
+do
+	./rec3 &
+	./rec2 &
+	./rec1 &
+	i=i+1
+	if [ i == 20 ]
+	then
+		break
+	fi
+done

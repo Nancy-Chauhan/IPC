@@ -1,0 +1,854 @@
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.3
+branch:
+locks: strict
+	root: 1.3
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+this is my server file
+----------------------------
+revision 1.3	locked by: root;
+date: 2017/09/19 04:02:38;  author: root;  state: Exp;  lines: +15 -10
+Now we use four client server
+----------------------------
+revision 1.2
+date: 2017/09/17 20:07:01;  author: root;  state: Exp;  lines: +2 -2
+remove the operator. which is send as a argument in the processing client
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:55;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: 1.c,v
+Working file: 1.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is not the app file
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 03:59:59;  author: root;  state: Exp;  lines: +9 -10
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2017/09/17 16:32:15;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: 2.c,v
+Working file: 2.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+ths is also not the app file
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 04:00:09;  author: root;  state: Exp;  lines: +4 -8
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2017/09/17 16:32:34;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: add.c,v
+Working file: add.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+This is processing client function. which is used for add the data
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:32:51;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: div.c,v
+Working file: div.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+In this function we have done division
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/19 04:00:13;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: init.c,v
+Working file: init.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is the function for initialise the pipes
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:33:35;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: mul.c,v
+Working file: mul.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is the procrssing client. 
+Which is used to multiple the data
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:34:20;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec1.c,v
+Working file: rec1.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is my requesting client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:34:59;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec2.c,v
+Working file: rec2.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is second requesting client
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 04:00:46;  author: root;  state: Exp;  lines: +1 -1
+we change the output format
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:18;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec3.c,v
+Working file: rec3.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is my third requestingg client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:35:36;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec4.c,v
+Working file: rec4.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is my fourth client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/19 04:02:17;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.3
+branch:
+locks: strict
+	root: 1.3
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+this is my server file
+----------------------------
+revision 1.3	locked by: root;
+date: 2017/09/19 04:02:38;  author: root;  state: Exp;  lines: +15 -10
+Now we use four client server
+----------------------------
+revision 1.2
+date: 2017/09/17 20:07:01;  author: root;  state: Exp;  lines: +2 -2
+remove the operator. which is send as a argument in the processing client
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:55;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: sub.c,v
+Working file: sub.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is procesing client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:36:04;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: 1.c,v
+Working file: 1.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is not the app file
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 03:59:59;  author: root;  state: Exp;  lines: +9 -10
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2017/09/17 16:32:15;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: 2.c,v
+Working file: 2.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+ths is also not the app file
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 04:00:09;  author: root;  state: Exp;  lines: +4 -8
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2017/09/17 16:32:34;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: add.c,v
+Working file: add.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+This is processing client function. which is used for add the data
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:32:51;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: div.c,v
+Working file: div.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+In this function we have done division
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/19 04:00:13;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: init.c,v
+Working file: init.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is the function for initialise the pipes
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:33:35;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: mul.c,v
+Working file: mul.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is the procrssing client. 
+Which is used to multiple the data
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:34:20;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec1.c,v
+Working file: rec1.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is my requesting client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:34:59;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec2.c,v
+Working file: rec2.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is second requesting client
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 04:00:46;  author: root;  state: Exp;  lines: +1 -1
+we change the output format
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:18;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec3.c,v
+Working file: rec3.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is my third requestingg client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:35:36;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec4.c,v
+Working file: rec4.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is my fourth client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/19 04:02:17;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.3
+branch:
+locks: strict
+	root: 1.3
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+this is my server file
+----------------------------
+revision 1.3	locked by: root;
+date: 2017/09/19 04:02:38;  author: root;  state: Exp;  lines: +15 -10
+Now we use four client server
+----------------------------
+revision 1.2
+date: 2017/09/17 20:07:01;  author: root;  state: Exp;  lines: +2 -2
+remove the operator. which is send as a argument in the processing client
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:55;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: sub.c,v
+Working file: sub.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is procesing client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:36:04;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: decleration.h,v
+Working file: decleration.h
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+In this function. I have declearation of all function .
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:30:01;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: header.h,v
+Working file: header.h
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+In this function. I have all header files
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:31:14;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: request.h,v
+Working file: request.h
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+In this function . I have strucher
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:31:39;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: 1.c,v
+Working file: 1.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is not the app file
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 03:59:59;  author: root;  state: Exp;  lines: +9 -10
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2017/09/17 16:32:15;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: 2.c,v
+Working file: 2.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+ths is also not the app file
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/19 04:00:09;  author: root;  state: Exp;  lines: +4 -8
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2017/09/17 16:32:34;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: add.c,v
+Working file: add.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+This is processing client function. which is used for add the data
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:32:51;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: init.c,v
+Working file: init.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is the function for initialise the pipes
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:33:35;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: inti.c,v
+Working file: inti.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/20 17:48:56;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: mul.c,v
+Working file: mul.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is the procrssing client. 
+Which is used to multiple the data
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:34:20;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec1.c,v
+Working file: rec1.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is my requesting client
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/20 17:49:05;  author: root;  state: Exp;  lines: +8 -3
+Add the signal alarm for the result executing to same client
+----------------------------
+revision 1.1
+date: 2017/09/17 16:34:59;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec2.c,v
+Working file: rec2.c
+head: 1.3
+branch:
+locks: strict
+	root: 1.3
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+this is second requesting client
+----------------------------
+revision 1.3	locked by: root;
+date: 2017/09/20 17:50:11;  author: root;  state: Exp;  lines: +8 -2
+add the signal alarm for the result executing to same client which give the command
+----------------------------
+revision 1.2
+date: 2017/09/19 04:00:46;  author: root;  state: Exp;  lines: +1 -1
+we change the output format
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:18;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: rec3.c,v
+Working file: rec3.c
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+this is my third requestingg client
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/20 17:50:59;  author: root;  state: Exp;  lines: +8 -2
+Add the signal alarm
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:36;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: server.c,v
+Working file: server.c
+head: 1.4
+branch:
+locks: strict
+	root: 1.4
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+this is my server file
+----------------------------
+revision 1.4	locked by: root;
+date: 2017/09/20 17:51:12;  author: root;  state: Exp;  lines: +10 -12
+add the kill function
+----------------------------
+revision 1.3
+date: 2017/09/19 04:02:38;  author: root;  state: Exp;  lines: +15 -10
+Now we use four client server
+----------------------------
+revision 1.2
+date: 2017/09/17 20:07:01;  author: root;  state: Exp;  lines: +2 -2
+remove the operator. which is send as a argument in the processing client
+----------------------------
+revision 1.1
+date: 2017/09/17 16:35:55;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: sub.c,v
+Working file: sub.c
+head: 1.1
+branch:
+locks: strict
+	root: 1.1
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+this is procesing client
+----------------------------
+revision 1.1	locked by: root;
+date: 2017/09/17 16:36:04;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: decleration.h,v
+Working file: decleration.h
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+In this function. I have declearation of all function .
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/20 17:47:12;  author: root;  state: Exp;  lines: +5 -1
+I define the handle for singal.
+----------------------------
+revision 1.1
+date: 2017/09/17 16:30:01;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: header.h,v
+Working file: header.h
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+In this function. I have all header files
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/20 17:48:00;  author: root;  state: Exp;  lines: +2 -0
+Add a new header file signal.h for signal command
+----------------------------
+revision 1.1
+date: 2017/09/17 16:31:14;  author: root;  state: Exp;
+Initial revision
+=============================================================================
+
+RCS file: request.h,v
+Working file: request.h
+head: 1.2
+branch:
+locks: strict
+	root: 1.2
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+In this function . I have strucher
+----------------------------
+revision 1.2	locked by: root;
+date: 2017/09/20 17:48:35;  author: root;  state: Exp;  lines: +4 -0
+we give the definition for signal handler
+----------------------------
+revision 1.1
+date: 2017/09/17 16:31:39;  author: root;  state: Exp;
+Initial revision
+=============================================================================

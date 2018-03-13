@@ -1,0 +1,96 @@
+head	1.5;
+access;
+symbols;
+locks
+	root:1.5; strict;
+comment	@ * @;
+
+
+1.5
+date	2017.10.19.06.29.21;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2017.10.04.13.31.50;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2017.09.28.16.00.40;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2017.09.28.05.34.49;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.22.05.13.55;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@In this function. I have decleared all header file
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@#include<stdio.h>
+#include<stdlib.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+#include<signal.h>
+#include<string.h>
+#include<fcntl.h>
+#include<unistd.h>
+#include<sys/sem.h>
+#include<sys/ipc.h>
+#include<sys/msg.h>
+#include<stdio_ext.h>
+#include<sys/shm.h>
+#include<semaphore.h>
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d11 1
+d13 2
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d11 1
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d9 2
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 1
+@

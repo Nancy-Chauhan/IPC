@@ -1,0 +1,62 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.22.17.41.00;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.32.51;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@This is processing client function. which is used for add the data
+@
+
+
+1.2
+log
+@We add the data
+@
+text
+@#include"header.h"
+#include"decleration.h"
+#include"request.h"
+int main(int argc,char *argv[])
+{
+	int wfd,count,add,a,b,c;
+	Request d;
+	printf("%d: %s is begin\n",getpid(),__FILE__);	
+	b=atoi(argv[3]);
+	c=atoi(argv[4]);
+	d.pid=atoi(argv[5]);
+	printf("pid=%d\n",d.pid);	
+	wfd=atoi(argv[1]);
+	d.result=b+c;
+	count=write(wfd,&d,sizeof(Request));
+	printf("write=%d\n",count);	
+	printf("%d: is end\n",getpid(),__FILE__);	
+}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d7 1
+d11 2
+d14 2
+a15 2
+	add=b+c;
+	count=write(wfd,&add,sizeof(int));
+@

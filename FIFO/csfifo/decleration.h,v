@@ -1,0 +1,46 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.22.05.27.01;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.22.05.26.05;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@In this function.I have decleared all function and pointer to function.
+@
+
+
+1.2
+log
+@There is a mistake in initialisation function spelling.
+@
+text
+@int initialisation();
+
+
+
+int (*init)();
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+int intialisation();
+@

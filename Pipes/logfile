@@ -1,0 +1,7 @@
+#! /bin/bash
+
+for file in $(ls *.c,v) $(ls *.h,v)
+do
+today=`date +%y%m%d`
+rlog $file >> log.server
+done

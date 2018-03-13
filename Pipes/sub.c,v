@@ -1,0 +1,40 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2017.09.17.16.36.04;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is procesing client
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include"header.h"
+#include"decleration.h"
+#include"request.h"
+int main(int argc,char *argv[])
+{
+	int wfd,count,a,b,c,sub;
+	printf("%d: %s is begin\n",getpid(),__FILE__);	
+	wfd=atoi(argv[1]);
+	b=atoi(argv[3]);
+	c=atoi(argv[4]);
+	sub=b-c;
+	count=write(wfd,&sub,sizeof(int));
+	printf("count-->%d\n",count);
+	printf("%d: %s is end\n",getpid(),__FILE__);	
+}
+@

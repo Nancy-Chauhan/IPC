@@ -1,0 +1,60 @@
+head	1.2;
+access;
+symbols;
+locks
+	root:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2017.09.22.17.41.39;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2017.09.17.16.36.04;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@this is procesing client
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include"header.h"
+#include"decleration.h"
+#include"request.h"
+int main(int argc,char *argv[])
+{
+	int wfd,count,a,b,c,sub;
+	Request d;
+	printf("%d: %s is begin\n",getpid(),__FILE__);	
+	wfd=atoi(argv[1]);
+	b=atoi(argv[3]);
+	c=atoi(argv[4]);
+	d.pid=atoi(argv[5]);
+	d.result=b-c;
+	count=write(wfd,&d,sizeof(Request));
+	printf("count-->%d\n",count);
+	printf("%d: %s is end\n",getpid(),__FILE__);	
+}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d7 1
+d12 3
+a14 2
+	sub=b-c;
+	count=write(wfd,&sub,sizeof(int));
+@
